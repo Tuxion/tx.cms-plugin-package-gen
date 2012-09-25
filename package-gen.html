@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>package.json generator</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.23/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.23/themes/base/jquery-ui.css" />
+    
+    <script type="text/javascript" src="package-gen.js"></script>
+    <link rel="stylesheet" href="package-gen.css" />
+    
+  </head>
+  <body>
+    
+    <div id="version_template" class="template">
+      <li class="version">
+        <p>
+          <label>Version number</label>
+          <input type="text" name="version_version" required />
+        </p>
+        <p>
+          <label>Version date</label>
+          <input type="date" name="version_date" required />
+        </p>
+        <p>
+          <label>Version description</label>
+          <textarea name="version_description" required></textarea>
+        </p>
+        <p>
+          <a href="#" class="button add_change">Add change</a>
+          <ul class="changes"></ul>
+        </p>
+      </li>
+    </div>
+    
+    <div id="change_template" class="template">
+      <li class="change">
+        <p>
+          <label>Change title</label>
+          <input type="text" name="change_title" required />
+        </p>
+        <p>
+          <label>Change description</label>
+          <textarea name="change_description" required></textarea>
+        </p>
+        <p>
+          <label>Change url (optional)</label>
+          <input type="url" name="change_url" />
+        </p>
+        <p>
+          <a href="#" class="button add_change">Add another change</a>
+        </p>
+      </li>
+    </div>
+    
+    <div id="version_preview" class="template">
+      <div class="version-wrapper">
+        <h4 class="header"></h4>
+        Versie:
+        <span class="version"></span>
+        <span class="date"></span>
+        <div class="description"></div>
+      </div>
+    </div>
+    
+    <div id="change_preview" class="template">
+      <div class="change-wrapper">
+        <h4 class="title"></h4>
+        <div class="description"></div>
+        <a class="url" target="_blank">Meer informatie</a>
+      </div>
+    </div>
+    
+    <div id="modifiers">
+      <p>
+        <label>Package title</label>
+        <input type="text" name="package_title" required />
+      </p>
+      <p>
+        <label>Package description</label>
+        <textarea name="package_description" required></textarea>
+      </p>
+      <p>
+        <label>Package type</label>
+        <select name="package_type" required disabled>
+          <option value="manual" selected>Manual</option>
+        </select>
+      </p>
+      <p class="checkbox">
+        <input type="checkbox" name="package_db_updates" value="true" />
+        <label>Database updates?</label>
+      </p>
+      <p>
+        <a href="#" class="button add_version">Add version</a>
+        <ul class="versions"></ul>
+      </p>
+    </div>
+    
+    <div id="preview">
+      &nbsp;
+    </div>
+    
+    <textarea id="json">
+    </textarea>
+    
+  </body>
+</html>

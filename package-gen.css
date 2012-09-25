@@ -1,0 +1,97 @@
+html, body{
+  height:100%;
+  color:#515151;
+  font-size:14px;
+}
+
+input[type=text],
+input[type=date],
+textarea{
+  width:220px;
+}
+
+textarea{
+  height:150px;
+}
+
+ul, ol{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+li{
+  margin-left:15px;
+}
+
+.template{
+  display:none;
+}
+
+#modifiers{
+  position:fixed;
+  top:0;
+  left:10px;
+  right:1220px;
+  bottom:0;
+  overflow:auto;
+}
+  #modifiers label{
+    display:block;
+  }
+  #modifiers .checkbox label{
+    display:inline;
+  }
+
+#preview{
+  position:fixed;
+  top:0;
+  bottom:0;
+  right:905px;
+  width:280px;
+  padding-top:20px;
+  padding-right:15px;
+  overflow-y:scroll;
+  
+  font-size:12px;
+  line-height:17px;
+  font-family:Calibri,Arial,sans-serif;
+}
+  #preview h4{
+    margin:0;
+  }
+  #preview ul{
+    list-style:disc;
+  }
+  #preview ol{
+    list-style:decimal;
+  }
+  #preview .version-wrapper{
+    width:250px;
+    margin:0 15px 15px 0;
+    border:1px solid #ccc;
+    padding:4px;
+  }
+    #preview .version-wrapper .date{
+      color:#888;
+    }
+    #preview .version-wrapper .description{
+      margin:4px 0;
+      font-style:italic;
+    }
+  #preview .change-wrapper{
+    margin:8px;
+  }
+    #preview .change-wrapper .description{
+      margin:0;
+      font-style:normal;
+    }
+
+#json{
+  position:fixed;
+  top:0;
+  right:0;
+  height:100%;
+  width:900px;
+  font-family:'Ubuntu Mono', 'monospace';
+  font-size:13pt;
+}
