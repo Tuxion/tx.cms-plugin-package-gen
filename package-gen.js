@@ -25,10 +25,10 @@
     
     //Versions.
     el.find('ul.versions').html('');
-    $.each(pack.versions, function(){
+    $.each(pack.versions || [], function(){
       
       var version = this
-        , elv = $($('#version_template').html()).appendTo(el.find('ul.versions'));
+        , elv = $($('#version_template').html().trim()).appendTo(el.find('ul.versions'));
       
       //Version meta.
       elv.find(':input[name=version_version]').val(version.version.trim().toLowerCase());
@@ -37,10 +37,10 @@
       
       //Changes.
       elv.find('ul.changes').html('');
-      $.each(version.changes, function(){
+      $.each(version.changes || [], function(){
         
         var change = this
-          , elc = $($('#change_template').html()).appendTo(elv.find('ul.changes'));
+          , elc = $($('#change_template').html().trim()).appendTo(elv.find('ul.changes'));
         
         //Change data.
         elc.find(':input[name=change_title]').val(change.title.trim());
@@ -84,7 +84,7 @@
       };
       
       //Preview version meta.
-      var versionPreview = $($('#version_preview').html());
+      var versionPreview = $($('#version_preview').html().trim());
       versionPreview.find('.header')
         .attr('title', pack.description)
         .html(pack.title);
@@ -106,7 +106,7 @@
           delete change.url;
         
         //Preview change.
-        var changePreview = $($('#change_preview').html());
+        var changePreview = $($('#change_preview').html().trim());
         changePreview.find('.title').html(change.title);
         changePreview.find('.description').html(change.description);
         if(change.url){
@@ -153,7 +153,7 @@
           .find('ul.versions')
             
             //Add template html to version list.
-            .prepend($('#version_template').html())
+            .prepend($('#version_template').html().trim())
             
             //Add datepicker where needed.
             .find('li.version')
@@ -173,7 +173,7 @@
           .find('ul.changes')
           
           //Add template html to change list.
-          .append($('#change_template').html());
+          .append($('#change_template').html().trim());
         
       })
       
